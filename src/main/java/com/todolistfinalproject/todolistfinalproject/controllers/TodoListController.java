@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.todolistfinalproject.todolistfinalproject.dao.iTodoListRepository;
@@ -44,17 +45,18 @@ public class TodoListController {
   }
 
   // POST http://localhost:8080/tasks/update
-  @PostMapping("/update/{id}")
-  public String updateExistingTask() {
-
-    return "";
+  @PostMapping("/update")
+  public TodoList updateExistingTask(@RequestBody TodoList todoList) {
+    return todoListRepository.save(todoList);
   }
 
   // POST http://localhost:8080/tasks/delete
   @DeleteMapping("/delete/{id}")
   public String deleteExistingTask(@PathVariable int id) {
+    // Try to get the id from the header
     Optional<TodoList> todolist = todoListRepository.findById(id);
 
+    // If it is possible to get the id, them delete the task with this id
     if (todolist.isPresent()) {
       todoListRepository.delete(todolist.get());
 
