@@ -20,8 +20,7 @@ public class TodoListController {
   @Autowired
   iTodoListRepository todoListRepository;
 
-  // It says that this route will be a of the type GET and the path is
-  // http://localhost:8080/tasks
+  // GET http://localhost:8080/tasks
   @GetMapping("")
   public String displayHomePageWithTasks(Model model) {
     // Create a list with all the info from the database
@@ -35,8 +34,10 @@ public class TodoListController {
 
   // POST http://localhost:8080/tasks/new
   @PostMapping("/new")
-  public String createNewTask() {
-    return "";
+  public String createNewTask(TodoList todoList, Model model) {
+    todoListRepository.save(todoList);
+
+    return "redirect:/tasks";
   }
 
   // POST http://localhost:8080/tasks/update
