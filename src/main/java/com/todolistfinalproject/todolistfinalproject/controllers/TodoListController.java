@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.todolistfinalproject.todolistfinalproject.dao.iTodoListRepository;
@@ -31,23 +30,46 @@ public class TodoListController {
     List<TodoList> todolists = todoListRepository.findAll();
 
     // Add the attribute "todo" to the model to be used on the HTML
-    model.addAttribute("todolist", todolists);
+    model.addAttribute("todolists", todolists);
 
     return "home/index";
   }
 
-  // POST http://localhost:8080/tasks/new
-  @PostMapping("/new")
+  // GET http://localhost:8080/tasks/new
+  // Shows the page with the form to add a task
+  @GetMapping("/new")
+  public String displayCreateTaskForm(Model model) {
+    model.addAttribute("todolist", new TodoList());
+
+    return "tasks/new-task";
+  }
+
+  // POST http://localhost:8080/tasks/save
+  @PostMapping("/save")
   public String createNewTask(TodoList todoList, Model model) {
     todoListRepository.save(todoList);
 
     return "redirect:/tasks";
   }
 
-  // POST http://localhost:8080/tasks/update
-  @PostMapping("/update")
+  // GET http://localhost:8080/tasks/update
+  // Shows the page with the form to update a task
+  @GetMapping("/update")
+  public String displayUpdateTaskForm() {
+    return "tasks/update-task";
+  }
+
+  // POST http://localhost:8080/tasks/update/save
+  // IMPORTANT: th:href="@{/tasks/update/save/{id}(id=${todolist.id})}"
+  @PostMapping("/update/save/{id}")
   public String updateExistingTask(TodoList todoList, Model model) {
-    todoListRepository.save(todoList);
+    int id = todoList.getId();
+    // Create a auxiliar todolist class that will get the id from the db
+    TodoList todolistAux = todoListRepository.findById(id).get();
+
+    todolistAux.setTaskName(todoList.getTaskName());
+    todolistAux.setTaskDescription(todoList.getTaskDescription());
+    todoListRepository.save(todolistAux);
 
     return "redirect:/tasks";
   }
