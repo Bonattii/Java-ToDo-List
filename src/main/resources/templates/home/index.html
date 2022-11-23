@@ -1,12 +1,6 @@
 <html lang="en">
   <head th:replace="layout :: head"></head>
   <body>
-    <table>
-      <tbody>
-        <tr th:each="todolist: ${todolist}">
-          <th th:text="${todolist.taskName}"></th>
-        </tr>
-      </tbody>
-    </table>
+    <a th:href="/tasks/new">Add Task</a>
   </body>
 </html>
