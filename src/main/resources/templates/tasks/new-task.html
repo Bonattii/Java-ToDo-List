@@ -1,6 +1,31 @@
 <html lang="en">
   <head th:replace="layout :: head"></head>
   <body>
-    <h1>New Task</h1>
+    <form action="/tasks/save" method="POST" th:object="${todolist}">
+      <fieldset>
+        <legend>Add your task here</legend>
+
+        <div>
+          <label>Title</label>
+          <br />
+          <input
+            type="text"
+            placeholder="Type the task title here!"
+            th:field="${todolist.taskName}"
+          />
+        </div>
+
+        <div>
+          <label>Description</label>
+          <input
+            type="text"
+            placeholder="Type the task description here!"
+            th:field="${todolist.taskDescription}"
+          />
+        </div>
+
+        <button type="submit">Create</button>
+      </fieldset>
+    </form>
   </body>
 </html>
