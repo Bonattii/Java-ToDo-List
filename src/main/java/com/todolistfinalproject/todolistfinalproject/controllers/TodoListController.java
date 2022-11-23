@@ -46,8 +46,10 @@ public class TodoListController {
 
   // POST http://localhost:8080/tasks/update
   @PostMapping("/update")
-  public TodoList updateExistingTask(@RequestBody TodoList todoList) {
-    return todoListRepository.save(todoList);
+  public String updateExistingTask(TodoList todoList, Model model) {
+    todoListRepository.save(todoList);
+
+    return "redirect:/tasks";
   }
 
   // POST http://localhost:8080/tasks/delete
