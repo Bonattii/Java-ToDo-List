@@ -76,6 +76,9 @@ public class TodoListController {
   // IMPORTANT: th:href="@{/tasks/update/save}"
   @PostMapping("/update/save/{id}")
   public String updateExistingTask(@PathVariable("id") int id, TodoList todoList, BindingResult result) {
+    // it will garanteee that we have the id from the task, if it didn't came in the
+    // url,
+    // then the setId will get this and the route will redirect for the form again
     if (result.hasErrors()) {
       todoList.setId(id);
 
