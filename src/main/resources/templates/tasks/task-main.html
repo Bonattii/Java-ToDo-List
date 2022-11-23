@@ -1,0 +1,20 @@
+<html lang="en">
+  <head th:replace="layout :: head"></head>
+  <body>
+    <a href="/tasks/new">Add Task</a>
+
+    <div th:each="todolist: ${todolists}">
+      <h1 th:text="${todolist.taskName}"></h1>
+      <p th:text="${todolist.taskDescription}"></p>
+
+      <a
+        th:href="@{/tasks/delete/{id}(id=${todolist.id})}"
+        th:data-confirm-delete="|You want to delete this task?|"
+        onclick="if (!confirm(this.getAttribute('data-confirm-delete'))) return false"
+        >Delete</a
+      >
+
+      <a th:href="@{/tasks/update/{id}(id=${todolist.id})}">Edit task</a>
+    </div>
+  </body>
+</html>

@@ -32,7 +32,7 @@ public class TodoListController {
     // Add the attribute "todo" to the model to be used on the HTML
     model.addAttribute("todolists", todolists);
 
-    return "home/index";
+    return "tasks/task-main";
   }
 
   // GET http://localhost:8080/tasks/new
