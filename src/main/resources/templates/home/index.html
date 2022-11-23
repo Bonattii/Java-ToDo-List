@@ -2,5 +2,10 @@
   <head th:replace="layout :: head"></head>
   <body>
     <a href="/tasks/new">Add Task</a>
+
+    <div th:each="todolist: ${todolists}">
+      <h1 th:text="${todolist.taskName}"></h1>
+      <p th:text="${todolist.taskDescription}"></p>
+    </div>
   </body>
 </html>
