@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -66,16 +67,22 @@ public class TodoListController {
 
     // Get the content of the old task
     TodoList todoList = todoListOld.get();
-    model.addAttribute("todolist", todoList);
+    model.addAttribute("todolistUpdate", todoList);
 
     return "tasks/update-task";
   }
 
   // POST http://localhost:8080/tasks/update/save
   // IMPORTANT: th:href="@{/tasks/update/save}"
-  @PostMapping("/update/save")
-  public String updateExistingTask(TodoList todolist) {
-    todoListRepository.save(todolist);
+  @PostMapping("/update/save/{id}")
+  public String updateExistingTask(@PathVariable("id") int id, TodoList todoList, BindingResult result) {
+    if (result.hasErrors()) {
+      todoList.setId(id);
+
+      return "tasks/update-task";
+    }
+
+    todoListRepository.save(todoList);
 
     return "redirect:/tasks";
   }

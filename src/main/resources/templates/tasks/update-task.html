@@ -1,6 +1,35 @@
 <html lang="en">
   <head th:replace="layout :: head"></head>
   <body>
-    <h1>Update Task</h1>
+    <form
+      th:action="@{/tasks/update/save/{id}(id=${todolistUpdate.id})}"
+      method="POST"
+      th:object="${todolistUpdate}"
+    >
+      <fieldset>
+        <legend>Edit your task here</legend>
+
+        <div>
+          <label>Title</label>
+          <br />
+          <input
+            type="text"
+            placeholder="Type the task title here!"
+            th:field="${todolistUpdate.taskName}"
+          />
+        </div>
+
+        <div>
+          <label>Description</label>
+          <input
+            type="text"
+            placeholder="Type the task description here!"
+            th:field="${todolistUpdate.taskDescription}"
+          />
+        </div>
+
+        <button type="submit">Edit</button>
+      </fieldset>
+    </form>
   </body>
 </html>
