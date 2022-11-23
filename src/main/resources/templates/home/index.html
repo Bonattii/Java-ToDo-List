@@ -6,6 +6,12 @@
     <title>Todo List Application</title>
   </head>
   <body>
-    <h1>h1</h1>
+    <table>
+      <tbody>
+        <tr th:each="todolist: ${todolist}">
+          <th th:text="${todolist.taskName}"></th>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>

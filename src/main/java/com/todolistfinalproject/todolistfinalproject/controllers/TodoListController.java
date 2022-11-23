@@ -25,7 +25,7 @@ public class TodoListController {
     List<TodoList> todolists = todoListRepository.findAll();
 
     // Add the attribute "todo" to the model to be used on the HTML
-    model.addAttribute("todo", todolists);
+    model.addAttribute("todolist", todolists);
 
     return "home/index";
   }
