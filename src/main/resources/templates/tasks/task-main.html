@@ -1,20 +1,50 @@
 <html lang="en">
-  <head th:replace="layout :: head"></head>
+  <head th:replace="layout :: head">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
   <body>
-    <a href="/tasks/new">Add Task</a>
+    <div id="grad">
+      <div class="create-task">
+        <div class="create-box">
+          <div class="color-create-box">
+            <a href="/tasks/new"
+              >Create your Task
+              <img src="notes.png" class="icon-3" alt="" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <div th:each="todolist: ${todolists}">
-      <h1 th:text="${todolist.taskName}"></h1>
-      <p th:text="${todolist.taskDescription}"></p>
+    <div id="box">
+      <div class="task" th:each="todolist: ${todolists}">
+        <div class="task-header">
+          <div class="title-color">
+            <h2 th:text="${todolist.taskName}">Title</h2>
+          </div>
 
-      <a
-        th:href="@{/tasks/delete/{id}(id=${todolist.id})}"
-        th:data-confirm-delete="|You want to delete this task?|"
-        onclick="if (!confirm(this.getAttribute('data-confirm-delete'))) return false"
-        >Delete</a
-      >
+          <div>
+            <a th:href="@{/tasks/update/{id}(id=${todolist.id})}">
+              <img src="edit.png" class="icon-1" alt="" />
+            </a>
 
-      <a th:href="@{/tasks/update/{id}(id=${todolist.id})}">Edit task</a>
+            <a
+              th:href="@{/tasks/delete/{id}(id=${todolist.id})}"
+              th:data-confirm-delete="|You want to delete this task?|"
+              onclick="if (!confirm(this.getAttribute('data-confirm-delete'))) return false"
+            >
+              <img src="delete.png" class="icon-2" alt="" />
+            </a>
+          </div>
+        </div>
+
+        <div class="task-description" th:text="${todolist.taskDescription}">
+          Description test. Whereas disregard and contempt for human rights have
+          resulted. Whereas disregard and contempt for human rights have
+          resulted.
+        </div>
+      </div>
     </div>
   </body>
 </html>
