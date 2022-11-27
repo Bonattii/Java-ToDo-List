@@ -1,5 +1,3 @@
-# ![Java-Todo-List](https://Bonattii.github.io/Java-Todo-List/images/.JPG)
-
 # To-Do List Project
 
 <table>
