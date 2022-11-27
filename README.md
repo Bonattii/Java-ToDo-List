@@ -26,7 +26,7 @@
 
 ### Edit Task Page
 
-![](https://Bonattii.github.io/Java-Todo-List/images/EditTaskPage.JPG)
+![](https://raw.githubusercontent.com/Bonattii/Java-Todo-List/main/images/EditTaskPage.png)
 
 ## Built with
 
