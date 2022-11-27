@@ -5,26 +5,28 @@
       <fieldset>
         <legend>Add your task here</legend>
 
-        <div>
+        <div class="form-data">
           <label>Title</label>
           <br />
           <input
             type="text"
             placeholder="Type the task title here!"
             th:field="${todolist.taskName}"
+            required
           />
         </div>
 
-        <div>
+        <div class="form-data">
           <label>Description</label>
           <input
             type="text"
             placeholder="Type the task description here!"
             th:field="${todolist.taskDescription}"
+            required
           />
         </div>
 
-        <button type="submit">Create</button>
+        <button class="form-button" type="submit">Create</button>
       </fieldset>
     </form>
   </body>

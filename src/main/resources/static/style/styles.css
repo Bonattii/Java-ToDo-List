@@ -1,6 +1,8 @@
-h1 {
-  font-size: 90px;
+* {
+  font-family: 'Poppins', sans-serif;
 }
+
+// Tomoki and Pan parts
 
 body {
   text-align: center;
@@ -26,7 +28,7 @@ legend {
   color: #b0c3eb;
 }
 
-div {
+.form-data {
   margin: 25px;
 }
 
@@ -56,12 +58,11 @@ label {
   float: left;
 }
 
-button {
+.form-button {
   width: 300px;
   height: 60px;
-  left: 236px;
-  top: 486px;
-  display: inline-block;
+  margin-inline: auto;
+  display: block;
   padding: 5px 10px;
   color: #fff;
   text-decoration: none;
@@ -73,8 +74,7 @@ button {
   font-size: 25px;
 }
 
-button:hover {
+.form-button:hover {
   transition: opacity 0.5s;
   opacity: 0.5;
 }
-/*   color: #c2cde9; */
