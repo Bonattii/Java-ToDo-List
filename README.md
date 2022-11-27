@@ -22,7 +22,7 @@
 
 ### Add New Task Page
 
-![](https://Bonattii.github.io/Java-Todo-List/images/AddTaskPage.JPG)
+![](https://raw.githubusercontent.com/Bonattii/Java-Todo-List/main/images/AddTaskPage.png)
 
 ### Edit Task Page
 
