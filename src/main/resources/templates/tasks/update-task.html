@@ -9,26 +9,28 @@
       <fieldset>
         <legend style="color: blue">Edit your task here</legend>
 
-        <div>
+        <div class="form-data">
           <label>Title</label>
           <br />
           <input
             type="text"
             placeholder="Type the task title here!"
             th:field="${todolistUpdate.taskName}"
+            required
           />
         </div>
 
-        <div>
+        <div class="form-data">
           <label>Description</label>
           <input
             type="text"
             placeholder="Type the task description here!"
             th:field="${todolistUpdate.taskDescription}"
+            required
           />
         </div>
 
-        <button type="submit">Edit</button>
+        <button class="form-button" type="submit">Edit</button>
       </fieldset>
     </form>
   </body>

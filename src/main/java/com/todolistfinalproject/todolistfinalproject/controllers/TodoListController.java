@@ -54,7 +54,6 @@ public class TodoListController {
 
   // GET http://localhost:8080/tasks/update/{id}
   // Shows the page with the form to update a task
-  // IMPORTANT: th:href="@{/tasks/update/{id}(id=${todolist.id})}"
   @GetMapping("/update/{id}")
   public String displayUpdateTaskForm(@PathVariable("id") int id, Model model) {
     // Try to find the task information by Id
@@ -73,7 +72,6 @@ public class TodoListController {
   }
 
   // POST http://localhost:8080/tasks/update/save
-  // IMPORTANT: th:href="@{/tasks/update/save}"
   @PostMapping("/update/save/{id}")
   public String updateExistingTask(@PathVariable("id") int id, TodoList todoList, BindingResult result) {
     // it will garanteee that we have the id from the task, if it didn't came in the
@@ -91,14 +89,10 @@ public class TodoListController {
   }
 
   // GET http://localhost:8080/tasks/delete/{id}
-  // IMPORTANT : th:href="@{/tasks/delete/{id}(id=${todolist.id})}"
-  // OTHER IMPORTANT: th:data-confirm-delete="|You want to delete this task?|"
-  // onclick="if (!confirm(this.getAttribute('data-confirm-delete'))) return
-  // false"
   @GetMapping("/delete/{id}")
   public String showDeleteTask(@PathVariable("id") int id, Model model) {
     // Try to find the task by Id and create a instance of TodoList
-    // If didn't find jus thow an argument exception
+    // If didn't find just throw an argument exception
     TodoList todolist = todoListRepository.findById(id)
         .orElseThrow(() -> new IllegalArgumentException("Invalid Task"));
 
