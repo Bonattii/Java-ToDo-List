@@ -38,6 +38,7 @@
 ## To-do
 
 - In the future, implement the login feature with authentication.
+- Deploy the application to people be able to test
 
 ## Team
 
