@@ -83,7 +83,7 @@ input[type='text']:focus {
 
 #box {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   box-shadow: 0px 60px 50px 0px rgba(0, 0, 0, 0.17);
   border-radius: 5px 8px 8px 0;
   border-left: 1.5px solid #9082e8;
@@ -91,6 +91,9 @@ input[type='text']:focus {
   border-top: 1px solid #9082e8;
   border-right: 1px solid #9082e8;
   background: #ebf0f7;
+
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #grad {
@@ -110,6 +113,21 @@ input[type='text']:focus {
   margin-right: 10px;
 }
 
+.create-box {
+  display: flex;
+  gap: 10px;
+}
+
+.color-create-box-2 {
+  display: flex;
+  align-items: center;
+  background: #ebba09;
+  padding: 4px 10px;
+  border-radius: 7px;
+  margin: 13px 0 0 0;
+  transition: 0.3s;
+}
+
 .color-create-box {
   display: flex;
   align-items: center;
@@ -124,7 +142,20 @@ input[type='text']:focus {
   background-color: #f0c8cd;
 }
 
+.color-create-box-2:hover {
+  background-color: #f0c8cd;
+}
+
 .color-create-box > a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: #d63a65;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
+
+.color-create-box-2 > a {
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -152,15 +183,15 @@ input[type='text']:focus {
 .icon-1 {
   width: 21.5px;
   height: 21.5px;
-  padding-top: 10px;
-  padding-right: 4px;
+  margin-top: 15px;
+
   cursor: pointer;
 }
 
 .icon-2 {
   width: 23.5px;
   height: 23.5px;
-  padding-top: 10px;
+  margin-left: 10px;
   cursor: pointer;
 }
 
@@ -182,7 +213,7 @@ input[type='text']:focus {
   border-radius: 10px;
   margin: 15px;
   width: 253px;
-  height: 240px;
+  height: 230px;
   padding: 5px 15px;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
 }
@@ -249,7 +280,7 @@ main {
   transition: 0.8s ease-in-out;
 }
 
-.sign-inf-form {
+.sign-in-form {
   max-width: 260px;
   width: 100%;
   margin: 0 auto;
