@@ -12,11 +12,11 @@
 
 ### Login Page
 
-![](https://Bonattii.github.io/Java-Todo-List/images/.JPG)
+![](https://raw.githubusercontent.com/Bonattii/Java-Todo-List/main/src/main/resources/static/img/LoginPage.png)
 
 ### Tasks Page
 
-![](https://Bonattii.github.io/Java-Todo-List/images/.JPG)
+![](https://raw.githubusercontent.com/Bonattii/Java-Todo-List/main/src/main/resources/static/img/MainPage.png)
 
 ### Add New Task Page
 
