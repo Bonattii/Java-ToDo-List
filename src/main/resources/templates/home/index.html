@@ -1,14 +1,12 @@
 <html lang="en">
-  <head th:replace="layout :: head">
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+  <head th:replace="layout :: head"></head>
 
   <body>
     <main>
       <div class="box">
         <div class="inner-box">
           <div class="images-wrapper">
-          <img src="login.jpg" class="image img-1 show" alt="" />
+          <img th:src="@{/img/login.jpg}" class="image img-1 show" alt="" />
 
             <div class="left-box">
                 <form action="index.html" autocomplete="off" class="sign-in-form">
@@ -21,20 +19,21 @@
                   <div class="actual-form">
                     <div class="input-wrap">
                       <input class="input-field"/>
-                      <label>Name</label>
+                      <label class="main-page-labels">Name</label>
                     </div>
 
                     <div class="input-wrap">
                       <input class="input-field"/>
-                      <label>Password</label>
+                      <label class="main-page-labels">Password</label>
                     </div>
-
-                    <input type="submit" value="Sign In" class="sign-btn" />
+                    <a href="/tasks" class="sign-btn">
+                      Sign In
+                    </a>
                   </div>
                 </form>
                   <div class="carousel"></div>
               </div>
-              
+
     </main>
   </body>
 </html>

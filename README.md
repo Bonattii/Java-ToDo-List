@@ -20,11 +20,11 @@
 
 ### Add New Task Page
 
-![](https://raw.githubusercontent.com/Bonattii/Java-Todo-List/main/images/AddTaskPage.png)
+![](https://raw.githubusercontent.com/Bonattii/Java-Todo-List/main/src/main/resources/static/img/AddTaskPage.png)
 
 ### Edit Task Page
 
-![](https://raw.githubusercontent.com/Bonattii/Java-Todo-List/main/images/EditTaskPage.png)
+![](https://raw.githubusercontent.com/Bonattii/Java-Todo-List/main/src/main/resources/static/img/EditTaskPage.png)
 
 ## Built with
 

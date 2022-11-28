@@ -1,7 +1,5 @@
 <html lang="en">
-  <head th:replace="layout :: head">
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+  <head th:replace="layout :: head"></head>
 
   <body>
     <div id="grad">
@@ -10,7 +8,7 @@
           <div class="color-create-box">
             <a href="/tasks/new"
               >Create your Task
-              <img src="notes.png" class="icon-3" alt="" />
+              <img th:src="@{/img/notes.png}" class="icon-3" alt="" />
             </a>
           </div>
         </div>
@@ -26,7 +24,7 @@
 
           <div>
             <a th:href="@{/tasks/update/{id}(id=${todolist.id})}">
-              <img src="edit.png" class="icon-1" alt="" />
+              <img th:src="@{/img/edit.png}" class="icon-1" alt="" />
             </a>
 
             <a
@@ -34,7 +32,7 @@
               th:data-confirm-delete="|You want to delete this task?|"
               onclick="if (!confirm(this.getAttribute('data-confirm-delete'))) return false"
             >
-              <img src="delete.png" class="icon-2" alt="" />
+              <img th:src="@{/img/delete.png}" class="icon-2" alt="" />
             </a>
           </div>
         </div>
